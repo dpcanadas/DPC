@@ -29,23 +29,23 @@ pipeline {
                                   
             }
            
-        stage('build') {
+        //stage('build') {
             steps {
                 script{
                     sh ''' 
                     docker build    jobs/dockerweb/ -t ${name_imagen}
-                    
+
                     '''
                     }
                     
                 }                    
                                   
-            }
+            //}
             stage('run') {
             steps {
                 script{
                     sh ''' 
-                        docker run -dp ${puerto_imagen}:80 --name ${name_final} ${name_imagen}:${tag_imagen}
+                        docker run -dp ${puerto_imagen}:8000 --name ${name_final} ${name_imagen}:${tag_imagen}
  
                     '''
                     }
