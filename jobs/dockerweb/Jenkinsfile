@@ -30,15 +30,15 @@ pipeline {
             }
            
         //stage('build') {
-            steps {
-                script{
-                    sh ''' 
-                    docker build    jobs/dockerweb/ -t ${name_imagen}
-
-                    '''
-                    }
-                    
-                }                    
+            //steps {
+            //    script{
+            //        sh ''' 
+                  //  docker build    jobs/dockerweb/ -t ${name_imagen}
+//
+  //                  '''
+    //                }
+      //              
+        //        }                    
                                   
             //}
             stage('run') {
